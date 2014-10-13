@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area_id: 1
+  name: MyString
+  category_id: 1
+  quality_name: MyString
+  old_quality_name: MyString
+  temperature: 1.5
+  pH: 1.5
+  osmotic_id: 1
+  discharge: 1.5
+  place: MyString
+  transportation: MyString
+  metasilicic_acid: 1.5
+  remarks: MyString
+
+two:
+  area_id: 1
+  name: MyString
+  category_id: 1
+  quality_name: MyString
+  old_quality_name: MyString
+  temperature: 1.5
+  pH: 1.5
+  osmotic_id: 1
+  discharge: 1.5
+  place: MyString
+  transportation: MyString
+  metasilicic_acid: 1.5
+  remarks: MyString

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :spring_infos
+
+  resources :osmotics
+
+  resources :categories
+
+  resources :areas
+
+  resources :prefectures
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,1 @@
+json.extract! @spring_info, :id, :area_id, :name, :category_id, :quality_name, :old_quality_name, :temperature, :pH, :osmotic_id, :discharge, :place, :transportation, :metasilicic_acid, :remarks, :created_at, :updated_at

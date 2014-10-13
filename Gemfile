@@ -39,3 +39,6 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 gem 'execjs'
 gem 'therubyracer'
+
+gem 'twitter-bootstrap3-rails'
+

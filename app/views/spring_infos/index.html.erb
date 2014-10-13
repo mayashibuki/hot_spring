@@ -1,0 +1,49 @@
+<h1>Listing spring_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Quality name</th>
+      <th>Old quality name</th>
+      <th>Temperature</th>
+      <th>Ph</th>
+      <th>Osmotic</th>
+      <th>Discharge</th>
+      <th>Place</th>
+      <th>Transportation</th>
+      <th>Metasilicic acid</th>
+      <th>Remarks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spring_infos.each do |spring_info| %>
+      <tr>
+        <td><%= spring_info.area_id %></td>
+        <td><%= spring_info.name %></td>
+        <td><%= spring_info.category_id %></td>
+        <td><%= spring_info.quality_name %></td>
+        <td><%= spring_info.old_quality_name %></td>
+        <td><%= spring_info.temperature %></td>
+        <td><%= spring_info.pH %></td>
+        <td><%= spring_info.osmotic_id %></td>
+        <td><%= spring_info.discharge %></td>
+        <td><%= spring_info.place %></td>
+        <td><%= spring_info.transportation %></td>
+        <td><%= spring_info.metasilicic_acid %></td>
+        <td><%= spring_info.remarks %></td>
+        <td><%= link_to 'Show', spring_info %></td>
+        <td><%= link_to 'Edit', edit_spring_info_path(spring_info) %></td>
+        <td><%= link_to 'Destroy', spring_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Spring info', new_spring_info_path %>

@@ -1,0 +1,69 @@
+<%= form_for(@spring_info) do |f| %>
+  <% if @spring_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spring_info.errors.count, "error") %> prohibited this spring_info from being saved:</h2>
+
+      <ul>
+      <% @spring_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :area_id %><br>
+    <%= f.number_field :area_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br>
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :quality_name %><br>
+    <%= f.text_field :quality_name %>
+  </div>
+  <div class="field">
+    <%= f.label :old_quality_name %><br>
+    <%= f.text_field :old_quality_name %>
+  </div>
+  <div class="field">
+    <%= f.label :temperature %><br>
+    <%= f.text_field :temperature %>
+  </div>
+  <div class="field">
+    <%= f.label :pH %><br>
+    <%= f.text_field :pH %>
+  </div>
+  <div class="field">
+    <%= f.label :osmotic_id %><br>
+    <%= f.number_field :osmotic_id %>
+  </div>
+  <div class="field">
+    <%= f.label :discharge %><br>
+    <%= f.text_field :discharge %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :transportation %><br>
+    <%= f.text_field :transportation %>
+  </div>
+  <div class="field">
+    <%= f.label :metasilicic_acid %><br>
+    <%= f.text_field :metasilicic_acid %>
+  </div>
+  <div class="field">
+    <%= f.label :remarks %><br>
+    <%= f.text_field :remarks %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

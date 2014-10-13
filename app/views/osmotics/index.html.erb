@@ -1,0 +1,25 @@
+<h1>Listing osmotics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @osmotics.each do |osmotic| %>
+      <tr>
+        <td><%= osmotic.name %></td>
+        <td><%= link_to 'Show', osmotic %></td>
+        <td><%= link_to 'Edit', edit_osmotic_path(osmotic) %></td>
+        <td><%= link_to 'Destroy', osmotic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Osmotic', new_osmotic_path %>

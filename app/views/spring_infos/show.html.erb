@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @spring_info.area_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @spring_info.name %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @spring_info.category_id %>
+</p>
+
+<p>
+  <strong>Quality name:</strong>
+  <%= @spring_info.quality_name %>
+</p>
+
+<p>
+  <strong>Old quality name:</strong>
+  <%= @spring_info.old_quality_name %>
+</p>
+
+<p>
+  <strong>Temperature:</strong>
+  <%= @spring_info.temperature %>
+</p>
+
+<p>
+  <strong>Ph:</strong>
+  <%= @spring_info.pH %>
+</p>
+
+<p>
+  <strong>Osmotic:</strong>
+  <%= @spring_info.osmotic_id %>
+</p>
+
+<p>
+  <strong>Discharge:</strong>
+  <%= @spring_info.discharge %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @spring_info.place %>
+</p>
+
+<p>
+  <strong>Transportation:</strong>
+  <%= @spring_info.transportation %>
+</p>
+
+<p>
+  <strong>Metasilicic acid:</strong>
+  <%= @spring_info.metasilicic_acid %>
+</p>
+
+<p>
+  <strong>Remarks:</strong>
+  <%= @spring_info.remarks %>
+</p>
+
+<%= link_to 'Edit', edit_spring_info_path(@spring_info) %> |
+<%= link_to 'Back', spring_infos_path %>
