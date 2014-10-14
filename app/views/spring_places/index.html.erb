@@ -1,0 +1,44 @@
+<h1>Listing spring_places</h1>
+<h3>CSVアップロード</h3>
+<div class="alert.alert-success">
+  <%= form_tag import_csv_spring_places_path, action: "import_csv", method: "post",multipart: true do %>
+    <div class="field">
+      <%= file_field_tag :csv_file %>
+      <br />
+    </div>
+    <div class="actions">
+      <%= submit_tag "CSVファイル取込" %>
+    </div>
+  <% end %>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Area</th>
+      <th>Name</th>
+      <th>Place</th>
+      <th>Transportation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spring_places.each do |spring_place| %>
+      <tr>
+        <td><%= spring_place.area_str %></td>
+        <td><%= spring_place.name %></td>
+        <td><%= spring_place.place %></td>
+        <td><%= spring_place.transportation %></td>
+        <td><%= link_to 'Show', spring_place %></td>
+        <td><%= link_to 'Edit', edit_spring_place_path(spring_place) %></td>
+        <td><%= link_to 'Destroy', spring_place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Spring place', new_spring_place_path %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Area:</strong>
+  <%= @spring_place.area_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @spring_place.name %>
+</p>
+
+<p>
+  <strong>Place:</strong>
+  <%= @spring_place.place %>
+</p>
+
+<p>
+  <strong>Transportation:</strong>
+  <%= @spring_place.transportation %>
+</p>
+
+<%= link_to 'Edit', edit_spring_place_path(@spring_place) %> |
+<%= link_to 'Back', spring_places_path %>

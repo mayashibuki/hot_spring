@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141013115355) do
+ActiveRecord::Schema.define(version: 20141014070713) do
 
   create_table "areas", force: true do |t|
     t.integer  "prefecture_id"
@@ -39,19 +39,33 @@ ActiveRecord::Schema.define(version: 20141013115355) do
   end
 
   create_table "spring_infos", force: true do |t|
+    t.string  "spring_info"
+    t.integer "spring_prace_id"
+    t.integer "category_id"
+    t.string  "quality_name"
+    t.string  "old_quality_name"
+    t.float   "temperature"
+    t.float   "pH"
+    t.integer "osmotic_id"
+    t.float   "discharge"
+    t.float   "metasilicic_acid"
+    t.string  "remarks"
+  end
+
+  create_table "spring_places", force: true do |t|
     t.integer  "area_id"
     t.string   "name"
-    t.integer  "category_id"
-    t.string   "quality_name"
-    t.string   "old_quality_name"
-    t.float    "temperature"
-    t.float    "pH"
-    t.integer  "osmotic_id"
-    t.float    "discharge"
     t.string   "place"
     t.string   "transportation"
-    t.float    "metasilicic_acid"
-    t.string   "remarks"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spring_praces", force: true do |t|
+    t.integer  "area_id"
+    t.string   "name"
+    t.string   "place"
+    t.string   "transportation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

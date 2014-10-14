@@ -1,0 +1,33 @@
+<%= form_for(@spring_place) do |f| %>
+  <% if @spring_place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spring_place.errors.count, "error") %> prohibited this spring_place from being saved:</h2>
+
+      <ul>
+      <% @spring_place.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :area_id %><br>
+    <%= f.collection_select :area_id, Area.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :place %><br>
+    <%= f.text_field :place %>
+  </div>
+  <div class="field">
+    <%= f.label :transportation %><br>
+    <%= f.text_field :transportation %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

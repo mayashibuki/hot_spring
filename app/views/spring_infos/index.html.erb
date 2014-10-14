@@ -1,10 +1,22 @@
 <h1>Listing spring_infos</h1>
+<h3>CSVアップロード</h3>
+<div class="alert.alert-success">
+  <%= form_tag import_csv_spring_infos_path, action: "import_csv", method: "post",multipart: true do %>
+    <div class="field">
+      <%= file_field_tag :csv_file %>
+      <br />
+    </div>
+    <div class="actions">
+      <%= submit_tag "CSVファイル取込" %>
+    </div>
+  <% end %>
+</div>
+
 
 <table class="table-bordered">
   <thead>
     <tr>
-      <th>地域</th>
-      <th>温泉名</th>
+      <th>温泉地</th>
       <th>泉質</th>
       <th>泉質（詳）</th>
       <th>泉質（旧）</th>
@@ -12,8 +24,6 @@
       <th>pH</th>
       <th>浸透圧</th>
       <th>湧出量</th>
-      <th>住所</th>
-      <th>交通</th>
       <th>メタケイ酸</th>
       <th>備考</th>
       <th colspan="3"></th>
@@ -23,8 +33,7 @@
   <tbody>
     <% @spring_infos.each do |spring_info| %>
       <tr>
-        <td><%= spring_info.area_str %></td>
-        <td><%= spring_info.name %></td>
+        <td><%= spring_info.spring_place_str %></td>
         <td><%= spring_info.category_str %></td>
         <td><%= spring_info.quality_name %></td>
         <td><%= spring_info.old_quality_name %></td>
@@ -32,8 +41,6 @@
         <td><%= spring_info.pH %></td>
         <td><%= spring_info.osmotic_str %></td>
         <td><%= spring_info.discharge %></td>
-        <td><%= spring_info.place %></td>
-        <td><%= spring_info.transportation %></td>
         <td><%= spring_info.metasilicic_acid %></td>
         <td><%= spring_info.remarks %></td>
         <td><%= link_to 'Edit', edit_spring_info_path(spring_info) %></td>

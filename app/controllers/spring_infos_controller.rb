@@ -61,7 +61,25 @@ class SpringInfosController < ApplicationController
     end
   end
 
+  def import_csv
+    spring_info = SpringInfo.new
+    if params[:csv_file].nil?
+      redirect_to spring_infos_path, :notice => "アップロードファイルを選択して下さい。"
+    else
+      valid, spring_infos = spring_info.check_csv(params[:csv_file])
+      logger.debug(valid)
+      if valid
+        logger.debug('save')
+        redirect_to spring_infos_path, :notice => "更新が完了しました。"
+      else
+        logger.debug('not save')
+        render :index
+      end
+    end
+  end
+
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_spring_info
       @spring_info = SpringInfo.find(params[:id])
@@ -69,6 +87,6 @@ class SpringInfosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def spring_info_params
-      params.require(:spring_info).permit(:area_id, :name, :category_id, :quality_name, :old_quality_name, :temperature, :pH, :osmotic_id, :discharge, :place, :transportation, :metasilicic_acid, :remarks)
+      params.require(:spring_info).permit(:spring_place_id, :category_id, :quality_name, :old_quality_name, :temperature, :pH, :osmotic_id, :discharge, :metasilicic_acid, :remarks)
     end
 end

@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  resources :spring_infos
+  resources :spring_places do
+    collection do
+      post 'import_csv'
+    end
+  end
+
+  resources :spring_infos do
+    collection do
+      post 'import_csv'
+    end
+  end
 
   resources :osmotics
 
