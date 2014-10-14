@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :area_id %><br>
-    <%= f.number_field :area_id %>
+    <%= f.collection_select :area_id, Area.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :quality_name %><br>
@@ -41,7 +41,7 @@
   </div>
   <div class="field">
     <%= f.label :osmotic_id %><br>
-    <%= f.number_field :osmotic_id %>
+    <%= f.collection_select :osmotic_id, Osmotic.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :discharge %><br>

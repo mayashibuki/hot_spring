@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :prefecture_id %><br>
-    <%= f.number_field :prefecture_id %>
+    <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :name %><br>

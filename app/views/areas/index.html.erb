@@ -12,7 +12,7 @@
   <tbody>
     <% @areas.each do |area| %>
       <tr>
-        <td><%= area.prefecture_id %></td>
+        <td><%= area.prefecture_str %></td>
         <td><%= area.name %></td>
         <td><%= link_to 'Show', area %></td>
         <td><%= link_to 'Edit', edit_area_path(area) %></td>
